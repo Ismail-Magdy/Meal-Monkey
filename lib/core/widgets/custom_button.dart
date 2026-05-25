@@ -2,22 +2,16 @@ import "package:flutter/material.dart";
 import "package:flutter_screenutil/flutter_screenutil.dart";
 import "package:meal_monkey/core/themes/app_colors.dart";
 
-// enum RoundedButtonType { bgPrimary, textPrimary }
-
 class CustomButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
   final bool isRounded;
-  final bool isMobile;
-  //  final RoundedButtonType type;
 
   const CustomButton({
     super.key,
     required this.text,
     required this.onPressed,
     required this.isRounded,
-    required this.isMobile,
-    // this.type = RoundedButtonType.bgPrimary,
   });
   @override
   Widget build(BuildContext context) {
@@ -38,7 +32,7 @@ class CustomButton extends StatelessWidget {
           style: TextStyle(
             fontWeight: FontWeight.bold,
             color: isRounded ? AppColors.primary : Colors.white,
-            fontSize: isMobile ? 13.sp : 8.sp,
+            fontSize: 16.sp,
             fontFamily: "Metropolis",
           ),
         ),

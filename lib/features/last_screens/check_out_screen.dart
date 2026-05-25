@@ -368,7 +368,6 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                 );
               },
               isRounded: false,
-              isMobile: true,
             ),
           ),
           //
