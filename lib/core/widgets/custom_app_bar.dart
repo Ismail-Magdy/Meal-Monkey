@@ -5,8 +5,8 @@ import 'package:meal_monkey/features/last_screens/my_order_screen.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
-  final bool isMobile;
-  const CustomAppBar({super.key, required this.title, required this.isMobile});
+
+  const CustomAppBar({super.key, required this.title});
 
   @override
   Size get preferredSize => Size.fromHeight(50);
@@ -14,17 +14,18 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      scrolledUnderElevation: 0,
       backgroundColor: Colors.white,
       leading: SizedBox.shrink(),
       leadingWidth: 0,
+
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             title,
             style: TextStyle(
-              fontFamily: "Metropolis",
-              fontSize: isMobile ? 19.sp : 5.sp,
+              fontSize: 19.sp,
               fontWeight: FontWeight.bold,
               color: AppColors.primaryText,
             ),
@@ -36,8 +37,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             ),
             child: Image.asset(
               "assets/images/shopping_cart.png",
-              width: isMobile ? 20.w : 15.w,
-              height: isMobile ? 20.h : 15.h,
+              width: 20.w,
+              height: 20.h,
             ),
           ),
         ],

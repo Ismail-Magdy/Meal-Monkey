@@ -40,7 +40,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
     return Scaffold(
-      appBar: CustomAppBar(title: "Profile", isMobile: true),
+      appBar: CustomAppBar(title: "Profile"),
       body: SingleChildScrollView(
         child: Center(
           child: Column(

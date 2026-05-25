@@ -37,7 +37,6 @@ class CustomNavigation extends StatelessWidget {
               color: isSelected ? AppColors.primary : AppColors.placeholder,
               fontSize: 11.sp,
               fontWeight: FontWeight.bold,
-              fontFamily: "Metropolis",
             ),
           ),
         ],

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:meal_monkey/core/themes/app_colors.dart';
-import 'package:meal_monkey/features/home/home_screen.dart';
+import 'package:meal_monkey/features/root/screens/root_screen.dart';
 import 'package:meal_monkey/core/widgets/custom_button.dart';
 
 class CustomBottomSheetCheckOut extends StatelessWidget {
@@ -80,7 +80,7 @@ class CustomBottomSheetCheckOut extends StatelessWidget {
             onTap: () {
               Navigator.pushAndRemoveUntil(
                 context,
-                MaterialPageRoute(builder: (context) => HomeScreen()),
+                MaterialPageRoute(builder: (context) => RootScreen()),
                 (route) => false,
               );
             },

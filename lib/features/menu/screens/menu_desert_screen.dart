@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:meal_monkey/core/models/second_meal_model.dart';
 import 'package:meal_monkey/core/themes/app_colors.dart';
-import 'package:meal_monkey/features/home/desert_details.dart';
+import 'package:meal_monkey/features/menu/screens/desert_details.dart';
 import 'package:meal_monkey/core/widgets/custom_app_bar_with_arrow.dart';
 
 class MenuDesertScreen extends StatefulWidget {

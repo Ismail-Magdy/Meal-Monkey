@@ -20,7 +20,7 @@ class _MoreScreenState extends State<MoreScreen> {
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
-      appBar: CustomAppBar(title: "More", isMobile: true),
+      appBar: CustomAppBar(title: "More"),
       body: Center(
         child: Column(
           children: [

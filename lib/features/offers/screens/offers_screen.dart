@@ -46,7 +46,7 @@ class _OffersScreenState extends State<OffersScreen> {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
     return Scaffold(
-      appBar: CustomAppBar(title: "Latest Offers", isMobile: true),
+      appBar: CustomAppBar(title: "Latest Offers"),
       body: SingleChildScrollView(
         child: Column(
           children: [

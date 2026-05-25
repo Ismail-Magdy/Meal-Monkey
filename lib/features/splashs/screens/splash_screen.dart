@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:meal_monkey/core/themes/app_colors.dart';
-import 'package:meal_monkey/features/home/home_screen.dart';
+import 'package:meal_monkey/features/root/screens/root_screen.dart';
 import 'package:meal_monkey/core/widgets/custom_button.dart';
 import 'package:meal_monkey/features/splashs/model/page_array_model.dart';
 
@@ -128,7 +128,7 @@ class _MyWidgetState extends State<SplashScreen> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => HomeScreen(),
+                                builder: (context) => RootScreen(),
                               ),
                             );
                           } else {
