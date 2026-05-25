@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:meal_monkey/core/helpers/spacing.dart';
 import 'package:meal_monkey/core/models/first_meal_model.dart';
 import 'package:meal_monkey/core/models/second_meal_model.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:meal_monkey/core/themes/app_colors.dart';
-import 'package:meal_monkey/features/home/item_details_screen.dart';
+import 'package:meal_monkey/core/widgets/custom_two_text.dart';
+import 'package:meal_monkey/features/home/widgets/item_details_screen.dart';
 import 'package:meal_monkey/core/widgets/custom_app_bar.dart';
 
-class MainView extends StatefulWidget {
-  const MainView({super.key});
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
 
   @override
-  State<MainView> createState() => _MainViewState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _MainViewState extends State<MainView> {
+class _HomeScreenState extends State<HomeScreen> {
   TextEditingController txtSearch = TextEditingController();
 
   List<FirstMealModel> meals = [
@@ -102,12 +104,15 @@ class _MainViewState extends State<MainView> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Scaffold(
-        appBar: CustomAppBar(title: "Good Morning Ismail!", isMobile: true),
+        //
+        appBar: CustomAppBar(title: "Good Morning Ismail!"),
+        //
         body: SingleChildScrollView(
           physics: BouncingScrollPhysics(),
           child: Column(
             children: [
-              SizedBox(height: 10.h),
+              //
+              verticalSpace(10.h),
               // Delivering to
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20.w),
@@ -147,9 +152,8 @@ class _MainViewState extends State<MainView> {
                   ],
                 ),
               ),
-
+              //
               SizedBox(height: 25.h),
-
               // Search Field
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 12.w),
@@ -184,11 +188,11 @@ class _MainViewState extends State<MainView> {
                   ),
                 ),
               ),
-
+              //
               SizedBox(height: 20.h),
-
               // Meals list
               SingleChildScrollView(
+                physics: BouncingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: List.generate(meals.length, (index) {
@@ -215,40 +219,15 @@ class _MainViewState extends State<MainView> {
                   }),
                 ),
               ),
-
+              //
               SizedBox(height: 25.h),
-
               // Popular Restaurants
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20.w),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Popular Restaurants",
-                      style: TextStyle(
-                        fontSize: 17.sp,
-                        fontWeight: FontWeight.bold,
-                        color: AppColors.primaryText,
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {},
-                      child: Text(
-                        "View all",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: AppColors.primary,
-                          fontSize: 13.sp,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+              CustomTwoText(
+                leftText: "Popular Restaurants",
+                rightText: "View all",
               ),
-
+              //
               SizedBox(height: 20.h),
-
               // Restaurants List
               Column(
                 children: List.generate(restraunt.length, (index) {
@@ -328,42 +307,15 @@ class _MainViewState extends State<MainView> {
                   );
                 }),
               ),
-
+              //
               SizedBox(height: 15.h),
-
               // Most Popular
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20.w),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Most Popular",
-                      style: TextStyle(
-                        fontSize: 18.sp,
-                        fontWeight: FontWeight.bold,
-                        color: AppColors.primaryText,
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {},
-                      child: Text(
-                        "View all",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: AppColors.primary,
-                          fontSize: 13.sp,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-
+              CustomTwoText(leftText: "Most Popular", rightText: "View all"),
+              //
               SizedBox(height: 20.h),
-
               // Third List
               SingleChildScrollView(
+                physics: BouncingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: List.generate(thirdList.length, (index) {
@@ -426,40 +378,12 @@ class _MainViewState extends State<MainView> {
                   }),
                 ),
               ),
-
+              //
               SizedBox(height: 25.h),
-
               // Recent Items
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20.w),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Recent Items",
-                      style: TextStyle(
-                        fontSize: 19.sp,
-                        fontWeight: FontWeight.bold,
-                        color: AppColors.primaryText,
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {},
-                      child: Text(
-                        "View all",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: AppColors.primary,
-                          fontSize: 13.sp,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-
+              CustomTwoText(leftText: "Recent Items", rightText: "View all"),
+              //
               SizedBox(height: 10.h),
-
               // Fourth List
               Column(
                 children: List.generate(fourthList.length, (index) {
@@ -576,7 +500,7 @@ class _MainViewState extends State<MainView> {
             ],
           ),
         ),
-        //,
+        //
       ),
     );
   }

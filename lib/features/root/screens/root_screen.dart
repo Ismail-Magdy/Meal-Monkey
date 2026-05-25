@@ -2,31 +2,30 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:meal_monkey/core/themes/app_colors.dart';
 import 'package:meal_monkey/features/last_screens/more_screen.dart';
-import 'package:meal_monkey/features/home/main_view.dart';
-import 'package:meal_monkey/features/home/menu_screen.dart';
-import 'package:meal_monkey/features/home/offers_screen.dart';
+import 'package:meal_monkey/features/home/screens/home_screen.dart';
+import 'package:meal_monkey/features/menu/screens/menu_screen.dart';
+import 'package:meal_monkey/features/offers/screens/offers_screen.dart';
 import 'package:meal_monkey/features/last_screens/profile_screen.dart';
 import 'package:meal_monkey/core/widgets/custom_navigation.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class RootScreen extends StatefulWidget {
+  const RootScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<RootScreen> createState() => _RootScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _RootScreenState extends State<RootScreen> {
   int selectedTap = 2;
   PageStorageBucket storageBucket = PageStorageBucket();
-  Widget selectedPageView = const MainView();
+  Widget selectedPageView = const HomeScreen();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: PageStorage(bucket: storageBucket, child: selectedPageView),
       floatingActionButtonLocation:
           FloatingActionButtonLocation.miniCenterDocked,
-      // floating
-      // home Button
+      // floating home Button
       floatingActionButton: SizedBox(
         height: 65.h,
         width: 65.w,
@@ -38,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
           onPressed: () {
             if (selectedTap != 2) {
               selectedTap = 2;
-              selectedPageView = const MainView();
+              selectedPageView = const HomeScreen();
             }
             if (mounted) {
               setState(() {});
@@ -130,6 +129,8 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
+      //
     );
   }
 }
+// 135
