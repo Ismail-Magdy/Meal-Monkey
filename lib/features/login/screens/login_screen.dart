@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:meal_monkey/core/themes/app_colors.dart';
-import 'package:meal_monkey/features/logins/reset_password_screen.dart';
+import 'package:meal_monkey/features/login/widgets/auth_text.dart';
+import 'package:meal_monkey/features/forgot_password/screens/reset_password_screen.dart';
 import 'package:meal_monkey/features/sign_up/screens/sign_up_screen.dart';
+import 'package:meal_monkey/features/sign_up/widgets/two_auth_text.dart';
 import 'package:meal_monkey/features/splashs/screens/splash_screen.dart';
 import 'package:meal_monkey/core/widgets/custom_button.dart';
 import 'package:meal_monkey/core/widgets/custom_icon_button.dart';
@@ -22,6 +24,13 @@ class _LoginScreenState extends State<LoginScreen> {
   final GlobalKey<FormState> _globalKey = GlobalKey<FormState>();
 
   @override
+  void dispose() {
+    txtEmail.dispose();
+    txtPassword.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
 
@@ -35,33 +44,23 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 SizedBox(height: height * .07),
                 // Login Text
-                Text(
-                  "Login",
-                  style: TextStyle(
-                    color: AppColors.primaryText,
-                    fontSize: 29.sp,
-                    fontFamily: "Metropolis",
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
+                const AuthText(title: "Login"),
+                //
                 SizedBox(height: height * .008),
                 // Second Text
                 Text(
                   "Add your details to login",
-                  style: TextStyle(
-                    color: AppColors.secondaryText,
-                    fontFamily: "Metropolis",
-                  ),
+                  style: TextStyle(color: AppColors.secondaryText),
                 ),
                 //
                 SizedBox(height: height * .04),
-                //
-                // TextFields
+                // Email
                 CustomTextField(
                   hint: "Your Email",
                   controller: txtEmail,
                   keyboardType: TextInputType.emailAddress,
                 ),
+                //
                 SizedBox(height: height * .035),
                 // Password
                 CustomTextField(
@@ -118,6 +117,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     fontFamily: "Metropolis",
                   ),
                 ),
+                //
                 SizedBox(height: height * .035),
                 // Facebook
                 CustomIconButton(
@@ -128,6 +128,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   color: AppColors.facebookicon,
                   onPressed: () {},
                 ),
+                //
                 SizedBox(height: height * .035),
                 // Google
                 CustomIconButton(
@@ -141,39 +142,17 @@ class _LoginScreenState extends State<LoginScreen> {
                 //
                 SizedBox(height: height * .11),
                 // Two Texts
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Don't have an Account?",
-                      style: TextStyle(
-                        fontSize: 12.5.sp,
-                        color: AppColors.secondaryText,
-                        fontFamily: "Metropolis",
-                      ),
-                    ),
-                    // Last Text in Screen
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => SignUpScreen(),
-                          ),
-                        );
-                      },
-                      child: Text(
-                        "Sign Up",
-                        style: TextStyle(
-                          fontSize: 13.5.sp,
-                          color: AppColors.primary,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: "Metropolis",
-                        ),
-                      ),
-                    ),
-                  ],
+                TwoAuthText(
+                  leftText: "Don't have an account? ",
+                  rightText: "Sign Up",
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SignUpScreen()),
+                    );
+                  },
                 ),
+                //
               ],
             ),
           ),

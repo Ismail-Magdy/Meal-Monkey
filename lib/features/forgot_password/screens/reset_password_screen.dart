@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:meal_monkey/core/themes/app_colors.dart';
-import 'package:meal_monkey/features/logins/otp_screen.dart';
+import 'package:meal_monkey/features/login/widgets/auth_text.dart';
+import 'package:meal_monkey/features/otp/otp_screen.dart';
 import 'package:meal_monkey/core/widgets/custom_button.dart';
 import 'package:meal_monkey/core/widgets/custom_text_field.dart';
 
@@ -26,15 +27,8 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
               children: [
                 SizedBox(height: height * .07),
                 // Reset Text
-                Text(
-                  "Reset Password",
-                  style: TextStyle(
-                    color: AppColors.primaryText,
-                    fontSize: 29.sp,
-                    fontFamily: "Metropolis",
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
+                AuthText(title: "Reset Password"),
+                //
                 SizedBox(height: height * .037),
                 // Second Text
                 Text(
@@ -43,7 +37,6 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                   style: TextStyle(
                     color: AppColors.secondaryText,
                     fontSize: 12.5.sp,
-                    fontFamily: "Metropolis",
                   ),
                 ),
                 //
@@ -54,7 +47,9 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                   controller: email,
                   keyboardType: TextInputType.emailAddress,
                 ),
+                //
                 SizedBox(height: height * .04),
+                // Send Button
                 CustomButton(
                   text: "Send",
                   onPressed: () {
@@ -65,6 +60,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                   },
                   isRounded: false,
                 ),
+                //
               ],
             ),
           ),
@@ -73,3 +69,4 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
     );
   }
 }
+// 75

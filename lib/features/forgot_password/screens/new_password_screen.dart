@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:meal_monkey/core/themes/app_colors.dart';
+import 'package:meal_monkey/features/login/widgets/auth_text.dart';
 import 'package:meal_monkey/features/splashs/screens/splash_screen.dart';
 import 'package:meal_monkey/core/widgets/custom_button.dart';
 import 'package:meal_monkey/core/widgets/custom_text_field.dart';
@@ -27,15 +28,8 @@ class _MyWidgetState extends State<NewPasswordScreen> {
               children: [
                 SizedBox(height: height * .07),
                 // New Text
-                Text(
-                  "New Password",
-                  style: TextStyle(
-                    color: AppColors.primaryText,
-                    fontSize: 29.sp,
-                    fontFamily: "Metropolis",
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
+                AuthText(title: "New Password"),
+                //
                 SizedBox(height: height * .037),
                 // Second Text
                 Text(
@@ -49,19 +43,23 @@ class _MyWidgetState extends State<NewPasswordScreen> {
                 ),
                 //
                 SizedBox(height: height * .045),
-                //
+                // New Password Text Field
                 CustomTextField(
                   hint: "New Password",
                   controller: password,
                   obscuretext: true,
                 ),
+                //
                 SizedBox(height: height * .03),
+                // Confirm Password Text Field
                 CustomTextField(
                   hint: "Confirm Password",
                   controller: confirmpassword,
                   obscuretext: true,
                 ),
+                //
                 SizedBox(height: height * .03),
+                // Next Button
                 CustomButton(
                   text: "Next",
                   onPressed: () {
@@ -72,6 +70,7 @@ class _MyWidgetState extends State<NewPasswordScreen> {
                   },
                   isRounded: false,
                 ),
+                //
               ],
             ),
           ),

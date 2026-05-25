@@ -19,7 +19,10 @@ class MealMonkey extends StatelessWidget {
           child: GestureDetector(
             onTap: () => FocusScope.of(context).unfocus(),
             child: MaterialApp(
-              theme: ThemeData(scaffoldBackgroundColor: Colors.white),
+              theme: ThemeData(
+                scaffoldBackgroundColor: Colors.white,
+                fontFamily: "Metropolis",
+              ),
               debugShowCheckedModeBanner: false,
               home: const LogoScreen(),
             ),

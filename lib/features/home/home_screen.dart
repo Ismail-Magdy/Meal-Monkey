@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:meal_monkey/core/themes/app_colors.dart';
 import 'package:meal_monkey/features/last_screens/more_screen.dart';
-import 'package:meal_monkey/features/main/main_view.dart';
-import 'package:meal_monkey/features/main/menu_screen.dart';
-import 'package:meal_monkey/features/main/offers_screen.dart';
+import 'package:meal_monkey/features/home/main_view.dart';
+import 'package:meal_monkey/features/home/menu_screen.dart';
+import 'package:meal_monkey/features/home/offers_screen.dart';
 import 'package:meal_monkey/features/last_screens/profile_screen.dart';
 import 'package:meal_monkey/core/widgets/custom_navigation.dart';
 

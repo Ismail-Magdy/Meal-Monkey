@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:meal_monkey/core/themes/app_colors.dart';
-import 'package:meal_monkey/features/main/menu_desert_screen.dart';
+import 'package:meal_monkey/features/home/menu_desert_screen.dart';
 import 'package:meal_monkey/core/widgets/custom_app_bar.dart';
 import 'package:meal_monkey/core/widgets/custom_menu_card.dart';
 

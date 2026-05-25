@@ -4,6 +4,8 @@ import 'package:meal_monkey/core/themes/app_colors.dart';
 import 'package:meal_monkey/features/login/screens/login_screen.dart';
 import 'package:meal_monkey/core/widgets/custom_button.dart';
 import 'package:meal_monkey/core/widgets/custom_text_field.dart';
+import 'package:meal_monkey/features/login/widgets/auth_text.dart';
+import 'package:meal_monkey/features/sign_up/widgets/two_auth_text.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -42,15 +44,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               children: [
                 SizedBox(height: height * .07),
                 // Sign up Text
-                Text(
-                  "Sign Up",
-                  style: TextStyle(
-                    color: AppColors.primaryText,
-                    fontSize: 29.sp,
-                    fontFamily: "Metropolis",
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
+                const AuthText(title: "Sign Up"),
                 //
                 SizedBox(height: height * .008),
                 // Second Text
@@ -59,7 +53,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   style: TextStyle(
                     color: AppColors.secondaryText,
                     fontSize: 12.5.sp,
-                    fontFamily: "Metropolis",
                   ),
                 ),
                 //
@@ -120,39 +113,17 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 //
                 SizedBox(height: height * .02),
                 // Two Texts
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Already have an Account?",
-                      style: TextStyle(
-                        fontSize: 12.sp,
-                        color: AppColors.secondaryText,
-                        fontFamily: "Metropolis",
-                      ),
-                    ),
-                    // Last Text in Screen
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => LoginScreen(),
-                          ),
-                        );
-                      },
-                      child: Text(
-                        "Login",
-                        style: TextStyle(
-                          fontSize: 13.sp,
-                          color: AppColors.primary,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: "Metropolis",
-                        ),
-                      ),
-                    ),
-                  ],
+                TwoAuthText(
+                  leftText: "Already have an account? ",
+                  rightText: "Login",
+                  onTap: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => LoginScreen()),
+                    );
+                  },
                 ),
+                //
               ],
             ),
           ),

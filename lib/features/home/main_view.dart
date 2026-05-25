@@ -4,7 +4,7 @@ import 'package:meal_monkey/core/models/first_meal_model.dart';
 import 'package:meal_monkey/core/models/second_meal_model.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:meal_monkey/core/themes/app_colors.dart';
-import 'package:meal_monkey/features/main/item_details_screen.dart';
+import 'package:meal_monkey/features/home/item_details_screen.dart';
 import 'package:meal_monkey/core/widgets/custom_app_bar.dart';
 
 class MainView extends StatefulWidget {
