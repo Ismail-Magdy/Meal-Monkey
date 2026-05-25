@@ -1,0 +1,348 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:meal_monkey/core/themes/app_colors.dart';
+import 'package:meal_monkey/features/logins/reset_password_screen.dart';
+import 'package:meal_monkey/features/logins/sign_up_screen.dart';
+import 'package:meal_monkey/features/splash/first_screen.dart';
+import 'package:meal_monkey/core/widgets/custom_button.dart';
+import 'package:meal_monkey/core/widgets/custom_icon_button.dart';
+import 'package:meal_monkey/core/widgets/custom_text_field.dart';
+import 'package:meal_monkey/core/helpers/responsive_widget.dart';
+
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
+
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  TextEditingController txtEmail = TextEditingController();
+  TextEditingController txtPassword = TextEditingController();
+  //
+  final GlobalKey<FormState> _globalKey = GlobalKey<FormState>();
+
+  @override
+  Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: ResponsiveWidget(
+          // Mobile Size
+          mobile: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 21.w),
+            child: Form(
+              key: _globalKey,
+              child: Column(
+                children: [
+                  SizedBox(height: height * .07),
+                  // Login Text
+                  Text(
+                    "Login",
+                    style: TextStyle(
+                      color: AppColors.primaryText,
+                      fontSize: 29.sp,
+                      fontFamily: "Metropolis",
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(height: height * .008),
+                  // Second Text
+                  Text(
+                    "Add your details to login",
+                    style: TextStyle(
+                      color: AppColors.secondaryText,
+                      fontFamily: "Metropolis",
+                    ),
+                  ),
+                  //
+                  SizedBox(height: height * .04),
+                  //
+                  // TextFields
+                  CustomTextField(
+                    hint: "Your Email",
+                    controller: txtEmail,
+                    keyboardType: TextInputType.emailAddress,
+                  ),
+                  SizedBox(height: height * .035),
+                  // Password
+                  CustomTextField(
+                    hint: "Password",
+                    controller: txtPassword,
+                    obscuretext: true,
+                  ),
+                  //
+                  SizedBox(height: height * .035),
+                  // Login Button
+                  CustomButton(
+                    isMobile: true,
+                    text: "Login",
+                    onPressed: () {
+                      if (_globalKey.currentState!.validate()) {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => FirstScreen(),
+                          ),
+                        );
+                      } else {
+                        return;
+                      }
+                    },
+                    isRounded: false,
+                  ),
+                  //
+                  SizedBox(height: height * .017),
+                  // Forgot Password Text
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ResetPasswordScreen(),
+                        ),
+                      );
+                    },
+                    child: Text(
+                      "Forgot your password?",
+                      style: TextStyle(
+                        fontSize: 12.5.sp,
+                        color: AppColors.secondaryText,
+                        fontFamily: "Metropolis",
+                      ),
+                    ),
+                  ),
+                  //
+                  SizedBox(height: height * .035),
+                  // or Login With
+                  Text(
+                    "or Login With",
+                    style: TextStyle(
+                      fontSize: 12.5.sp,
+                      color: AppColors.secondaryText,
+                      fontFamily: "Metropolis",
+                    ),
+                  ),
+                  SizedBox(height: height * .035),
+                  // Facebook
+                  CustomIconButton(
+                    fontSize: 12.5.sp,
+                    isMobile: true,
+                    text: "Login with Facebook",
+                    image: "assets/images/facebook_logo.png",
+                    color: AppColors.facebookicon,
+                    onPressed: () {},
+                  ),
+                  SizedBox(height: height * .035),
+                  // Google
+                  CustomIconButton(
+                    fontSize: 12.5.sp,
+                    isMobile: true,
+                    text: "Login with Google",
+                    image: "assets/images/google_logo.png",
+                    color: AppColors.googleicon,
+                    onPressed: () {},
+                  ),
+                  //
+                  SizedBox(height: height * .11),
+                  // Two Texts
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Don't have an Account?",
+                        style: TextStyle(
+                          fontSize: 12.5.sp,
+                          color: AppColors.secondaryText,
+                          fontFamily: "Metropolis",
+                        ),
+                      ),
+                      // Last Text in Screen
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => SignUpScreen(),
+                            ),
+                          );
+                        },
+                        child: Text(
+                          "Sign Up",
+                          style: TextStyle(
+                            fontSize: 13.5.sp,
+                            color: AppColors.primary,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: "Metropolis",
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+          // Desktop Size
+          desktop: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 21.w),
+            child: Column(
+              children: [
+                SizedBox(height: height * .07),
+                // Login Text
+                Text(
+                  "Login",
+                  style: TextStyle(
+                    color: AppColors.primaryText,
+                    fontSize: 15.sp,
+                    fontFamily: "Metropolis",
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: height * .008),
+                // Second Text
+                Text(
+                  "Add your details to login",
+                  style: TextStyle(
+                    color: AppColors.secondaryText,
+                    fontFamily: "Metropolis",
+                  ),
+                ),
+                //
+                SizedBox(height: height * .04),
+                //
+                // TextFields
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 70.w),
+                  child: CustomTextField(
+                    hint: "Your Email",
+                    controller: txtEmail,
+                    keyboardType: TextInputType.emailAddress,
+                  ),
+                ),
+                SizedBox(height: height * .035),
+                // Password
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 70.w),
+                  child: CustomTextField(
+                    hint: "Password",
+                    controller: txtPassword,
+                    obscuretext: true,
+                  ),
+                ),
+                //
+                SizedBox(height: height * .035),
+                // Login Button
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 70.w),
+                  child: CustomButton(
+                    isMobile: false,
+                    text: "Login",
+                    onPressed: () {},
+                    isRounded: false,
+                  ),
+                ),
+                //
+                SizedBox(height: height * .017),
+                // Forgot Password Text
+                TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ResetPasswordScreen(),
+                      ),
+                    );
+                  },
+                  child: Text(
+                    "Forgot your password?",
+                    style: TextStyle(
+                      fontSize: 5.sp,
+                      color: AppColors.secondaryText,
+                      fontFamily: "Metropolis",
+                    ),
+                  ),
+                ),
+                //
+                SizedBox(height: height * .035),
+                // or Login With
+                Text(
+                  "or Login With",
+                  style: TextStyle(
+                    fontSize: 5.sp,
+                    color: AppColors.secondaryText,
+                    fontFamily: "Metropolis",
+                  ),
+                ),
+                SizedBox(height: height * .035),
+                // Facebook
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 70.w),
+                  child: CustomIconButton(
+                    fontSize: 7.sp,
+                    isMobile: false,
+                    text: "Login with Facebook",
+                    image: "assets/images/facebook_logo.png",
+                    color: AppColors.facebookicon,
+                    onPressed: () {},
+                  ),
+                ),
+                SizedBox(height: height * .035),
+                // Google
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 70.w),
+                  child: CustomIconButton(
+                    fontSize: 17.sp,
+                    isMobile: false,
+                    text: "Login with Google",
+                    image: "assets/images/google_logo.png",
+                    color: AppColors.googleicon,
+                    onPressed: () {},
+                  ),
+                ),
+                //
+                SizedBox(height: height * .11),
+                // Two Texts
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Don't have an Account?",
+                      style: TextStyle(
+                        fontSize: 5.sp,
+                        color: AppColors.secondaryText,
+                        fontFamily: "Metropolis",
+                      ),
+                    ),
+                    // Last Text in Screen
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => SignUpScreen(),
+                          ),
+                        );
+                      },
+                      child: Text(
+                        "Sign Up",
+                        style: TextStyle(
+                          fontSize: 5.5.sp,
+                          color: AppColors.primary,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: "Metropolis",
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: height * .01),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
