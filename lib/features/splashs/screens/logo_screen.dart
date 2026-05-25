@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:meal_monkey/features/logins/splash_screen.dart';
+import 'package:meal_monkey/features/splashs/screens/on_boarding_screen.dart';
 
 class LogoScreen extends StatefulWidget {
   const LogoScreen({super.key});
@@ -14,16 +14,16 @@ class _LogoScreenState extends State<LogoScreen> {
   void initState() {
     super.initState();
     // call the function
-    goSplashScreen();
+    goOnBoardingScreen();
   }
 
-  // function to Go to SplashScreen
-  void goSplashScreen() async {
+  // function to Go to OnBoardingScreen
+  void goOnBoardingScreen() async {
     await Future.delayed(const Duration(seconds: 3));
     Navigator.pushReplacement(
       // ignore: use_build_context_synchronously
       context,
-      MaterialPageRoute(builder: (context) => const SplashScreen()),
+      MaterialPageRoute(builder: (context) => const OnBoardingScreen()),
     );
   }
 

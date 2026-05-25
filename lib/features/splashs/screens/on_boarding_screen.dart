@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:meal_monkey/core/themes/app_colors.dart';
-import 'package:meal_monkey/features/logins/login_screen.dart';
-import 'package:meal_monkey/features/logins/sign_up_screen.dart';
+import 'package:meal_monkey/features/login/screens/login_screen.dart';
+import 'package:meal_monkey/features/sign_up/screens/sign_up_screen.dart';
 import 'package:meal_monkey/core/widgets/custom_button.dart';
 
-class SplashScreen extends StatefulWidget {
-  const SplashScreen({super.key});
+class OnBoardingScreen extends StatefulWidget {
+  const OnBoardingScreen({super.key});
   @override
-  State<SplashScreen> createState() => _SplashScreenState();
+  State<OnBoardingScreen> createState() => _OnBoardingScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _OnBoardingScreenState extends State<OnBoardingScreen> {
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -38,6 +38,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   height: 150.h,
                   fit: BoxFit.contain,
                 ),
+                //
               ],
             ),
             //
@@ -85,10 +86,10 @@ class _SplashScreenState extends State<SplashScreen> {
                 },
               ),
             ),
+            //
           ],
         ),
       ),
     );
   }
 }
-// 173
