@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:meal_monkey/core/themes/app_colors.dart';
 import 'package:meal_monkey/features/main/home_screen.dart';
 import 'package:meal_monkey/core/widgets/custom_button.dart';
-import 'package:meal_monkey/features/splash/model/page_array_model.dart';
+import 'package:meal_monkey/features/splashs/model/page_array_model.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

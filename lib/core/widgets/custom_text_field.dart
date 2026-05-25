@@ -49,7 +49,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
               focusedBorder: InputBorder.none,
               hintText: widget.hint,
               hintStyle: TextStyle(
-                color: AppColors.placeholder,
+                color: AppColors.primaryText,
                 fontFamily: "Metropolis",
               ),
             ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:meal_monkey/core/themes/app_colors.dart';
-import 'package:meal_monkey/features/logins/login_screen.dart';
+import 'package:meal_monkey/features/login/screens/login_screen.dart';
 import 'package:meal_monkey/core/widgets/custom_button.dart';
 import 'package:meal_monkey/core/widgets/custom_text_field.dart';
 
@@ -18,6 +18,18 @@ class _SignUpScreenState extends State<SignUpScreen> {
   TextEditingController address = TextEditingController();
   TextEditingController password = TextEditingController();
   TextEditingController confirmPassword = TextEditingController();
+
+  @override
+  dispose() {
+    name.dispose();
+    email.dispose();
+    mobileno.dispose();
+    address.dispose();
+    password.dispose();
+    confirmPassword.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -39,6 +51,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
+                //
                 SizedBox(height: height * .008),
                 // Second Text
                 Text(
@@ -49,40 +62,48 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     fontFamily: "Metropolis",
                   ),
                 ),
-
                 //
                 SizedBox(height: height * .045),
-                // Fields
+                // Name Field
                 CustomTextField(
                   hint: "Name",
                   controller: name,
                   keyboardType: TextInputType.name,
                 ),
+                //
                 SizedBox(height: height * .035),
+                // Email Field
                 CustomTextField(
                   hint: "Email",
                   controller: email,
                   keyboardType: TextInputType.emailAddress,
                 ),
+                //
                 SizedBox(height: height * .035),
                 CustomTextField(
                   hint: "Mobile No",
                   controller: mobileno,
                   keyboardType: TextInputType.number,
                 ),
+                //
                 SizedBox(height: height * .035),
+                // Address Field
                 CustomTextField(
                   hint: "Address",
-                  controller: name,
+                  controller: address,
                   keyboardType: TextInputType.streetAddress,
                 ),
+                //
                 SizedBox(height: height * .035),
+                // Password Field
                 CustomTextField(
                   hint: "Password",
                   controller: password,
                   obscuretext: true,
                 ),
+                //
                 SizedBox(height: height * .035),
+                // Confirm Password Field
                 CustomTextField(
                   hint: "Confirm Password",
                   controller: confirmPassword,
@@ -90,6 +111,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
                 //
                 SizedBox(height: height * .035),
+                // Sign Up Button
                 CustomButton(
                   text: "Sign Up",
                   onPressed: () {},
@@ -104,7 +126,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     Text(
                       "Already have an Account?",
                       style: TextStyle(
-                        fontSize: 12.5.sp,
+                        fontSize: 12.sp,
                         color: AppColors.secondaryText,
                         fontFamily: "Metropolis",
                       ),
@@ -122,7 +144,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       child: Text(
                         "Login",
                         style: TextStyle(
-                          fontSize: 13.5.sp,
+                          fontSize: 13.sp,
                           color: AppColors.primary,
                           fontWeight: FontWeight.bold,
                           fontFamily: "Metropolis",
