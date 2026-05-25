@@ -180,7 +180,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20.w),
                 child: CustomButton(
-                  isMobile: true,
                   text: "Save",
                   onPressed: () {},
                   isRounded: false,

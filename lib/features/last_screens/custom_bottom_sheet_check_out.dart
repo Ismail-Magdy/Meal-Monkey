@@ -71,7 +71,6 @@ class CustomBottomSheetCheckOut extends StatelessWidget {
               text: "Track my order",
               onPressed: () {},
               isRounded: false,
-              isMobile: true,
             ),
           ),
           //

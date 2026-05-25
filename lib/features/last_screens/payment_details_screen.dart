@@ -181,7 +181,6 @@ class _PaymentDetailsScreenState extends State<PaymentDetailsScreen> {
                   );
                 },
                 isRounded: false,
-                isMobile: true,
               ),
             ),
           ],

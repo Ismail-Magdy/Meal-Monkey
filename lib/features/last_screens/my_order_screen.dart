@@ -326,7 +326,6 @@ class _MyOrderScreenState extends State<MyOrderScreen> {
                 );
               },
               isRounded: false,
-              isMobile: true,
             ),
           ),
           //
