@@ -138,10 +138,10 @@ The project includes a comprehensive library of 12 custom reusable widgets:
 | Screen           | Preview                                               |
 | ---------------- | ----------------------------------------------------- |
 | Logo Splash      | <img width="4000" height="2800" alt="1" src="https://github.com/user-attachments/assets/47fc2ec0-6bcc-423d-b400-287e534f4d02" /> |
-| Onboarding       | ![Onboarding](screenshots/onboarding.png)             |
-| Welcome          | ![Welcome](screenshots/welcome.png)                   |
-| Login            | ![Login](screenshots/login.png)                       |
-| Sign Up          | ![Sign Up](screenshots/sign_up.png)                   |
+| Onboarding       | <img width="4000" height="2800" alt="8" src="https://github.com/user-attachments/assets/1d888e90-c4ff-4735-91b0-16d6d56ba8ca" /> |
+| Welcome          | <img width="4000" height="2800" alt="2" src="https://github.com/user-attachments/assets/535cd866-5cde-4f2b-993d-72f7769a5fb4" /> |
+| Login            | <img width="4000" height="2800" alt="6" src="https://github.com/user-attachments/assets/8b988d8d-b8de-438c-9e38-6647a370484d" /> |
+| Sign Up          | <img width="4000" height="2800" alt="3" src="https://github.com/user-attachments/assets/257bef38-a535-42a3-9790-89bbaad7c099" /> |
 | Reset Password   | ![Reset Password](screenshots/reset_password.png)     |
 | OTP Verification | ![OTP Verification](screenshots/otp_verification.png) |
 | New Password     | ![New Password](screenshots/new_password.png)         |
