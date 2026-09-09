@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:glass_bottom_navigation_bar/glass_bottom_navigation_bar.dart';
 import 'package:meal_monkey/core/themes/app_colors.dart';
 import 'package:meal_monkey/features/last_screens/more_screen.dart';
 import 'package:meal_monkey/features/home/screens/home_screen.dart';
 import 'package:meal_monkey/features/menu/screens/menu_screen.dart';
 import 'package:meal_monkey/features/offers/screens/offers_screen.dart';
-import 'package:meal_monkey/features/last_screens/profile_screen.dart';
-import 'package:meal_monkey/core/widgets/custom_navigation.dart';
+import 'package:meal_monkey/features/profile/screens/profile_screen.dart';
 
 class RootScreen extends StatefulWidget {
   const RootScreen({super.key});
@@ -17,120 +16,72 @@ class RootScreen extends StatefulWidget {
 
 class _RootScreenState extends State<RootScreen> {
   int selectedTap = 2;
-  PageStorageBucket storageBucket = PageStorageBucket();
-  Widget selectedPageView = const HomeScreen();
+  final PageStorageBucket storageBucket = PageStorageBucket();
+
+  final List<Widget> pages = const [
+    MenuScreen(),
+    OffersScreen(),
+    HomeScreen(),
+    ProfileScreen(),
+    MoreScreen(),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: PageStorage(bucket: storageBucket, child: selectedPageView),
-      floatingActionButtonLocation:
-          FloatingActionButtonLocation.miniCenterDocked,
-      // floating home Button
-      floatingActionButton: SizedBox(
-        height: 65.h,
-        width: 65.w,
-        child: FloatingActionButton(
-          shape: const CircleBorder(),
-          backgroundColor: selectedTap == 2
-              ? AppColors.primary
-              : AppColors.placeholder,
-          onPressed: () {
-            if (selectedTap != 2) {
-              selectedTap = 2;
-              selectedPageView = const HomeScreen();
-            }
-            if (mounted) {
-              setState(() {});
-            }
-          },
-          child: Image.asset(
-            "assets/images/tab_home.png",
-            width: 30.w,
-            height: 30.h,
-          ),
-        ),
-      ),
-      //Navigation bar
-      bottomNavigationBar: BottomAppBar(
-        surfaceTintColor: Colors.white,
-        notchMargin: 15,
-        elevation: 1,
-        color: Colors.white,
-        shadowColor: Colors.black12,
-        shape: CircularNotchedRectangle(),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 7),
-          child: SafeArea(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                //
-                CustomNavigation(
-                  onTap: () {
-                    if (selectedTap != 0) {
-                      selectedTap = 0;
-                      selectedPageView = const MenuScreen();
-                    }
-                    if (mounted) {
-                      setState(() {});
-                    }
-                  },
-                  image: "assets/images/tab_menu.png",
-                  text: "Menu",
-                  isSelected: selectedTap == 0,
-                ),
-                //
-                CustomNavigation(
-                  onTap: () {
-                    if (selectedTap != 1) {
-                      selectedTap = 1;
-                      selectedPageView = const OffersScreen();
-                    }
-                    if (mounted) {
-                      setState(() {});
-                    }
-                  },
-                  image: "assets/images/tab_offer.png",
-                  text: "Offer",
-                  isSelected: selectedTap == 1,
-                ),
-                //
-                CustomNavigation(
-                  onTap: () {
-                    if (selectedTap != 3) {
-                      selectedTap = 3;
-                      selectedPageView = const ProfileScreen();
-                    }
-                    if (mounted) {
-                      setState(() {});
-                    }
-                  },
-                  image: "assets/images/tab_profile.png",
-                  text: "Profile",
-                  isSelected: selectedTap == 3,
-                ),
-                //
-                CustomNavigation(
-                  onTap: () {
-                    if (selectedTap != 4) {
-                      selectedTap = 4;
-                      selectedPageView = const MoreScreen();
-                    }
-                    if (mounted) {
-                      setState(() {});
-                    }
-                  },
-                  image: "assets/images/tab_more.png",
-                  text: "More",
-                  isSelected: selectedTap == 4,
-                ),
-              ],
+      extendBody: true,
+      body: PageStorage(bucket: storageBucket, child: pages[selectedTap]),
+      bottomNavigationBar: GlassBottomNavigationBar(
+        currentIndex: selectedTap,
+        enableHapticFeedback: true,
+        selectedItemColor: AppColors.primary,
+        unselectedItemColor: AppColors.placeholder,
+
+        margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+
+        onTap: (index) {
+          setState(() {
+            selectedTap = index;
+          });
+        },
+        items: [
+          BottomNavigationBarItemData(
+            icon: const ImageIcon(
+              AssetImage("assets/images/tab_menu.png"),
+              size: 22,
             ),
+            label: "Menu",
           ),
-        ),
+          BottomNavigationBarItemData(
+            icon: const ImageIcon(
+              AssetImage("assets/images/tab_offer.png"),
+              size: 20,
+            ),
+            label: "Offer",
+          ),
+          BottomNavigationBarItemData(
+            icon: const ImageIcon(
+              AssetImage("assets/images/tab_home.png"),
+              size: 20,
+            ),
+            label: "Home",
+          ),
+          BottomNavigationBarItemData(
+            icon: const ImageIcon(
+              AssetImage("assets/images/tab_profile.png"),
+              size: 20,
+            ),
+            label: "Profile",
+          ),
+          BottomNavigationBarItemData(
+            icon: const ImageIcon(
+              AssetImage("assets/images/tab_more.png"),
+              size: 20,
+            ),
+            label: "More",
+          ),
+        ],
       ),
-      //
     );
   }
 }
-// 135

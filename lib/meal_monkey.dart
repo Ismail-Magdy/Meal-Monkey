@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:meal_monkey/core/logic/cubit/image_storage_cubit.dart';
-import 'package:meal_monkey/features/splashs/screens/logo_screen.dart';
+import 'package:meal_monkey/features/root/screens/root_screen.dart';
 
 class MealMonkey extends StatelessWidget {
   const MealMonkey({super.key});
@@ -24,7 +24,7 @@ class MealMonkey extends StatelessWidget {
                 fontFamily: "Metropolis",
               ),
               debugShowCheckedModeBanner: false,
-              home: const LogoScreen(),
+              home: const RootScreen(),
             ),
           ),
         );
