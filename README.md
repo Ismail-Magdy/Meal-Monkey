@@ -131,52 +131,11 @@ The project includes a comprehensive library of 12 custom reusable widgets:
 
 ---
 
-## Screenshots
+## Project Demo Video
 
-### Onboarding and Authentication
 
-| Screen           | Preview                                               |
-| ---------------- | ----------------------------------------------------- |
-| Logo Splash      | <img width="4000" height="2800" alt="1" src="https://github.com/user-attachments/assets/47fc2ec0-6bcc-423d-b400-287e534f4d02" /> |
-| Onboarding       | <img width="4000" height="2800" alt="8" src="https://github.com/user-attachments/assets/1d888e90-c4ff-4735-91b0-16d6d56ba8ca" /> |
-| Welcome          | <img width="4000" height="2800" alt="2" src="https://github.com/user-attachments/assets/535cd866-5cde-4f2b-993d-72f7769a5fb4" /> |
-| Login            | <img width="4000" height="2800" alt="6" src="https://github.com/user-attachments/assets/8b988d8d-b8de-438c-9e38-6647a370484d" /> |
-| Sign Up          | <img width="4000" height="2800" alt="3" src="https://github.com/user-attachments/assets/257bef38-a535-42a3-9790-89bbaad7c099" /> |
-| Reset Password   | ![Reset Password](screenshots/reset_password.png)     |
-| OTP Verification | ![OTP Verification](screenshots/otp_verification.png) |
-| New Password     | ![New Password](screenshots/new_password.png)         |
+[![Watch the Demo](./assets/video-thumbnail.png)](https://www.linkedin.com/posts/ismailmagdy021_meal-monkey-food-delivery-mobile-app-activity-7382159246274117632-OgEV?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAFZR5YkB7p3Ec25rUFTgW8Fu8OYWPbb3dNQ)
 
-### Core Screens
-
-| Screen           | Preview                                              |
-| ---------------- | ---------------------------------------------------- |
-| Home             | ![Home](screenshots/home.png)                        |
-| Item Details     | ![Item Details](screenshots/item_details.png)        |
-| Menu Categories  | ![Menu Categories](screenshots/menu_categories.png)  |
-| Dessert Sub-Menu | ![Dessert Sub-Menu](screenshots/dessert_submenu.png) |
-| Dessert Detail   | ![Dessert Detail](screenshots/dessert_detail.png)    |
-| Latest Offers    | ![Latest Offers](screenshots/latest_offers.png)      |
-
-### Profile, Orders, and Checkout
-
-| Screen                  | Preview                                                   |
-| ----------------------- | --------------------------------------------------------- |
-| Profile                 | ![Profile](screenshots/profile.png)                       |
-| My Order                | ![My Order](screenshots/my_order.png)                     |
-| Checkout                | ![Checkout](screenshots/checkout.png)                     |
-| Add Card (Bottom Sheet) | ![Add Card](screenshots/add_card.png)                     |
-| Order Confirmation      | ![Order Confirmation](screenshots/order_confirmation.png) |
-
-### Additional Screens
-
-| Screen               | Preview                                             |
-| -------------------- | --------------------------------------------------- |
-| More Menu            | ![More Menu](screenshots/more_menu.png)             |
-| Change Address (Map) | ![Change Address](screenshots/change_address.png)   |
-| Payment Details      | ![Payment Details](screenshots/payment_details.png) |
-| Notifications        | ![Notifications](screenshots/notifications.png)     |
-| Inbox                | ![Inbox](screenshots/inbox.png)                     |
-| About Us             | ![About Us](screenshots/about_us.png)               |
 
 ---
 
