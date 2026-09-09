@@ -137,7 +137,7 @@ The project includes a comprehensive library of 12 custom reusable widgets:
 
 | Screen           | Preview                                               |
 | ---------------- | ----------------------------------------------------- |
-| Logo Splash      | ![Logo Splash](screenshots/logo_splash.png)           |
+| Logo Splash      | <img width="4000" height="2800" alt="1" src="https://github.com/user-attachments/assets/47fc2ec0-6bcc-423d-b400-287e534f4d02" /> |
 | Onboarding       | ![Onboarding](screenshots/onboarding.png)             |
 | Welcome          | ![Welcome](screenshots/welcome.png)                   |
 | Login            | ![Login](screenshots/login.png)                       |
