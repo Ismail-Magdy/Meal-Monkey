@@ -134,7 +134,7 @@ The project includes a comprehensive library of 12 custom reusable widgets:
 ## Project Demo Video
 
 
-[![Watch the Demo](./assets/video-thumbnail.png)](https://www.linkedin.com/posts/ismailmagdy021_meal-monkey-food-delivery-mobile-app-activity-7382159246274117632-OgEV?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAFZR5YkB7p3Ec25rUFTgW8Fu8OYWPbb3dNQ)
+[![Watch the Demo]](https://www.linkedin.com/posts/ismailmagdy021_meal-monkey-food-delivery-mobile-app-activity-7382159246274117632-OgEV?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAFZR5YkB7p3Ec25rUFTgW8Fu8OYWPbb3dNQ)
 
 
 ---
